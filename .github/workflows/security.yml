@@ -23,6 +23,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Semgrep
-        uses: semgrep/semgrep@v1
+        uses: semgrep/semgrep-action@v1
         with:
           config: p/default
