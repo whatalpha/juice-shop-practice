@@ -15,7 +15,7 @@ jobs:
 
       - name: Say hello
         run: echo "CI pipeline is alive"
-        
+
   sast-scan:
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +23,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Semgrep
-        uses: semgrep/semgrep-action@v1
+        uses: semgrep/semgrep@latest
         with:
           config: p/default
