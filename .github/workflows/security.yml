@@ -18,11 +18,13 @@ jobs:
 
   sast-scan:
     runs-on: ubuntu-latest
+
+    container:
+      image: semgrep/semgrep:latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run Semgrep
-        uses: semgrep/semgrep-action@v1
-        with:
-          config: p/default
+      - name: Run Semgrep OSS Scan
+        run: semgrep scan --config p/default --error
